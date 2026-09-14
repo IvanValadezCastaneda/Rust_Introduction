@@ -14,7 +14,7 @@
 // Hint: you want two independent, equal Strings. Look at `.clone()`.
 pub fn exercise1_move() -> String {
     let a = String::from("hello");
-    let b = a;
+    let b = a.clone();
     format!("{a} {b}")
 }
 
@@ -25,8 +25,8 @@ pub fn exercise1_move() -> String {
 // "hello world / hello world".
 pub fn exercise2_borrow_conflict() -> String {
     let mut s = String::from("hello");
-    let r1 = &s;
     s.push_str(" world");
+    let r1 = &s;
     format!("{r1} / {s}")
 }
 
@@ -35,9 +35,9 @@ pub fn exercise2_borrow_conflict() -> String {
 // so the reference would dangle -- the borrow checker rejects this.
 // Fix it by returning an owned `String` instead of a borrowed `&str`
 // (change the return type, and return `local` itself instead of `&local`).
-pub fn exercise3_dangling() -> &'static str {
+pub fn exercise3_dangling() -> String {
     let local = String::from("dangling");
-    &local
+    local
 }
 
 // TODO 4: `sum` takes ownership of the Vec, so the second call fails --
@@ -45,12 +45,12 @@ pub fn exercise3_dangling() -> &'static str {
 // parameter type so it borrows a slice (`&[i32]`) instead of taking
 // ownership, and update both call sites to pass a reference.
 pub fn exercise4_sum_twice(numbers: Vec<i32>) -> i32 {
-    let first = sum(numbers);
-    let second = sum(numbers);
+    let first = sum(&numbers);
+    let second = sum(&numbers);
     first + second
 }
 
-fn sum(numbers: Vec<i32>) -> i32 {
+fn sum(numbers: &Vec<i32>) -> i32 {
     numbers.iter().sum()
 }
 
