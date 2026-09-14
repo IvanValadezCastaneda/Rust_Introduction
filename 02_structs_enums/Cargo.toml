@@ -1,0 +1,8 @@
+[package]
+name = "structs_enums"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "structs_enums"
+path = "src/main.rs"

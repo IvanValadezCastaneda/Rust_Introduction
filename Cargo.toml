@@ -2,4 +2,5 @@
 resolver = "2"
 members = [
     "01_ownership",
+    "02_structs_enums",
 ]

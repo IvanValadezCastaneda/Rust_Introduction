@@ -25,7 +25,7 @@ Build/test everything at once from the repo root with `cargo build` /
 | # | Crate | Topic | Status |
 |---|-------|-------|--------|
 | 1 | [`01_ownership`](01_ownership) | Ownership, moves, borrowing, `&`/`&mut`, slices | ready |
-| 2 | `02_structs_enums` | Structs, enums, pattern matching, `Option`/`Result` | planned |
+| 2 | [`02_structs_enums`](02_structs_enums) | Structs, methods, enums, pattern matching, `Option` | ready |
 | 3 | `03_error_handling` | `Result`, `?`, `panic!` vs recoverable errors | planned |
 | 4 | `04_collections_iterators` | `Vec`, `HashMap`, iterator combinators | planned |
 | 5 | `05_traits_generics` | Traits, generics, trait objects vs C++ templates/virtuals | planned |
